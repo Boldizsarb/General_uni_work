@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Boldizsarb/General_uni_work/issues"
   },
-  "homepage": "https://github.com/Boldizsarb/General_uni_work#readme"
+  "homepage": "https://github.com/Boldizsarb/General_uni_work#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
 }
