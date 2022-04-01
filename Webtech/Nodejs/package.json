@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Boldizsarb/General_uni_work#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.3"
   }
 }

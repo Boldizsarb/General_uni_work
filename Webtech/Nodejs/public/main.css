@@ -1,0 +1,73 @@
+header{
+    width: 100%;
+    height: 80vh;
+    background: url("./images/banner.jpg");
+    background-position: center; /* it will center the image*/
+    background-repeat: no-repeat; /* it will display only one*/
+    background-size: cover;  /* it streches the image*/
+    display: flex; /* this will center the text (h1)*/
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
+    
+}
+#buttonline{
+    list-style-type: none;
+    text-decoration: none; 
+    margin:0;
+    
+}
+li{
+    display: inline-block; /* to make it horizontal, the li is the target*/
+    /*can be done by: display:flex; and justify content*/
+    padding: 25px 60px;
+    margin: 0;
+    
+
+}
+h1{
+    color: white;
+   /* font-size: 100px;  this is a way*/ 
+    
+}
+body{
+
+    background-color: rgb(5, 5, 5);
+    color: white;
+    margin: 0;
+}
+h2{
+text-align: center;
+padding:20px;
+}
+.flexcontent{
+    display: flex; /* we apply it for the div, contain the most div, the parent element which is this*/
+    justify-content: space-around;
+    margin-bottom: 10px ;
+}
+.img, .text{
+    width: 40vh;
+}
+.img img{
+    width: 100%; /* the img will fill up the 100% of the container and will not overflow onto the text*/
+}
+.reverse{ 
+    flex-direction: row-reverse;
+    /*The content of the div will be opposit now.*/
+}
+.review{
+    text-align: center;
+    padding: 20px;
+    font-size: large;
+}
+
+/*#cookiebanner{
+    width: 100%;
+    background-color: yellow;
+    height: 30vh;
+    position: fixed;  musst define the bottom and left or other sides otherwise it would be off the site
+    bottom: 0;
+    left: 0; 
+}*/ 
+
+

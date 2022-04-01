@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    
+<h3>Please use the form below to contact us</h3>
+<br>
+    <form id="forma">
+    
+        <label for="firstbox">Name:</label><br>
+        <input class="input"  id="firstbox" name="name"><br>
+        <lable for="firstbox">E-mail:</lable><br>
+        <input type="email" class="input" id="firstbox" name="email">
+        <!--The type email still can be used wiht js validation-->
+        
+   
+
+        <br>
+
+
+    <p>Which package is your query about?</p>
+
+    <input type="radio" id="choose" name="need_choosing" value="first">
+    <label>Standard</label><br>
+    <input type="radio" id="choose_two" name="need_choosing" value="second">
+    <label>The chosen one package</label>
+
+<br>
+
+
+<p>We may respond via owl, on a scale of 1-1-, how scared are you of owls?</p>
+
+    <label>(10 being the most scared)</label>
+    <input type="number" class="input" name="scared">
+
+    <br>
+    <br>
+
+
+
+        <label>Please enter your query</label>
+        <br>
+        <input type="text" class="input" id="bigger" value="Enter your query"> 
+  
+
+    <br>
+
+        <button type="submit" value="submit">Submit</button><br>
+        <p id="results"></p>
+        <script src="contact.js"></script>
+    </form>
+    <!--Had to wrap the whole thing around with a form tag othervise it would not have submitted it anything-->
+
+
+
+
+
+</body>
+
+</html>

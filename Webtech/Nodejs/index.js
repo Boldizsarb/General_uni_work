@@ -1,13 +1,14 @@
 const express = require('express'); 
 
 const app = express();
+app.set('view engine', 'ejs'); // EJS, HTML only 
+app.use(express.static('public')); // CSS and Java 
 
 app.get("/", (req, res) =>{
-res.send("<h1>Welcome ot the gome page</h1>");
+res.render("index"); // file name only. it will rendered onto the page 
 });
-// creating another root:
 app.get("/contact", (req, res) =>{
-    res.send("<h1>Contact page</h1>");
+    res.render("contact"); 
     });
 
-app.listen(3000,()=>{console.log("Server started!")} )
+app.listen(3000,()=>{console.log("Server started!")} );
