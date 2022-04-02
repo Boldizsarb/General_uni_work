@@ -3,14 +3,25 @@ import sqlite3
 db_file = "/Users/boldizsarbanfia/Documents/University/Database/Databases/testeing.db"
 db = sqlite3.connect(db_file)
 cursor = db.cursor()
- # Now comest he query
 
-sql_query = "SELECT empno, ename, deptno FROM emp"
-cursor.execute(sql_query)    # executing the query
-#emp_row = cursor.fetchone() # retrievign the first row
-all_emp_rows = cursor.fetchall() # retrieving all rows
-for emp_row in all_emp_rows:
-    empno = emp_row[0]
-    ename = emp_row[1]
-    deptno = emp_row[2]
-    print("{0},{1},{2}".format(empno, ename, deptno))
+sql_query = "SELECT ename, name FROM customer c   INNER JOIN emp e ON c.repid = e.empno ORDER BY ename"
+cursor.execute(sql_query)    #
+
+all_emp_rows= cursor.fetchall()
+last_repname = ""
+print("{0:10}\t{1:40}".format("Sales Rep","Customer name"))
+print(f"{}")
+
+for emp_row in all_emp_rows: # for loop needed in case of displaying all rows
+    repname = emp_row[0]
+    custname = emp_row[1]
+
+    if repname != last_repname:
+        #print(f"{repname}, {custname}")
+        print("{0:10}\t{1:40}".format(repname, custname))
+        last_repname = repname
+    else:
+      #  print(f"{''}, {custname} ")
+      print("{0:10}\t{1:40}".format("", custname))
+
+db.close()
