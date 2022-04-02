@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="main.css">
     
 
@@ -13,16 +13,8 @@
     <header>
             <h1>Welcome <br> to Hogwarts</h1>
     </header>
-   
-    <nav> <!--sementic tag, for navigation-->>
-        <ul id="buttonline">
-            <li>Home Page</li>
-            <li>Browse</li>
-            <li><a href="aboutus.html">About us</a></li>
-            <li><a href="contact.html" target="blank">Contact us</a></li>
-            <li>Example page 2</li>
-        </ul>
-    </nav>
+   <%- include('particles/nav.ejs')%>
+    
     <h2>Why Study with us?</h2>
    <main>
     <div class="flexcontent">
