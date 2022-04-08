@@ -42,7 +42,7 @@ app.get("/form", (req, res) =>{ // responsible for receiving information
     res.render('form')
     });
 
-app.post("/something", (req, res) =>{  // the query 
+app.post("/something", (req, res) =>{  // the query // the varibales name should be identical to the one in html 
     db.query("INSERT INTO location(location, name) VALUES(?,?)", [req.body.description, req.body.name], (error, results)=>{
     console.log(error);
         res.render("locadded", {err: error}) // status massage of the result, either error or succes on another ejs file. 
