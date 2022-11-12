@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "expresss": "^0.0.0",
+    "init": "^0.1.2",
+    "mongo": "^0.1.0",
+    "mongodb": "^4.10.0"
+  },
+  "devDependencies": {
+    "kill-port": "^2.0.1",
+    "nodemon": "^2.0.20"
+  }
+}
