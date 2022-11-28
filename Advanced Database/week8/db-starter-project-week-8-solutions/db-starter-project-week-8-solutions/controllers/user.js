@@ -3,13 +3,13 @@ const bcrypt = require('bcrypt');
 
 exports.login = async (req, res) => {
     try {
-        const user = await User.findOne({ email: req.body.email });
-        if (!user) {
+        const user = await User.findOne({ email: req.body.email }); // searching for the email
+        if (!user) {     // we can do that since the email is unique:true (as a primary key)
             res.render('login-user', { errors: { email: { message: 'email not found' } } })
             return;
         }
 
-        const match = await bcrypt.compare(req.body.password, user.password);
+        const match = await bcrypt.compare(req.body.password, user.password);  // matching the found pw it returns  true of false
         if (match) {
             req.session.userID = user._id;
             console.log(req.session.userID);

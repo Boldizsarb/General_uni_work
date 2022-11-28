@@ -5,8 +5,8 @@ const mongoose = require("mongoose");
 const chalk = require("chalk");
 const bodyParser = require("body-parser");
 const countriesModel = require("./models/Country");
-const expressSession = require("express-session");
-const User = require("./models/User");
+const expressSession = require("express-session"); // sessions 
+const User = require("./models/User"); // user
 
 
 /**
@@ -15,7 +15,8 @@ const User = require("./models/User");
 const tasterController = require("./controllers/taster");
 const tastingController = require("./controllers/tasting");
 const homeController = require("./controllers/home");
-const userController = require("./controllers/user");
+
+const userController = require("./controllers/user"); // user
 
 const app = express();
 app.set("view engine", "ejs");
@@ -98,6 +99,7 @@ app.get("/update-tasting/:id", tastingController.edit);
 app.get("/tastings", tastingController.list);
 app.get("/tastings/delete/:id", tastingController.delete);
 
+ // user
 app.get("/join", (req, res) => {
   res.render('create-user', { errors: {} })
 });
