@@ -4,9 +4,9 @@ const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
     {
-        email: { type: String, required: [true, 'email is required'], unique: true },
-        password: { type: String, required: [true, 'password is required'] },
-        saved_tastings: [{ type: mongoose.Schema.Types.ObjectId, ref: "Tasting" }], 
+        email: { type: String, required: [true, 'Email required'], unique: true },
+        password: { type: String, required: [true, 'Password  required'] }
+         
     },
     { timestamps: true }
 );

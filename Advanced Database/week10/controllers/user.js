@@ -5,7 +5,7 @@ exports.login = async (req, res) => {
     try {
         const user = await User.findOne({ email: req.body.email });
         if (!user) {
-            res.render('login-user', { errors: { email: { message: 'email not found' } } })
+            res.render('loginUser', { errors: { email: { message: 'Email not found' } } })
             return;
         }
 
@@ -17,7 +17,7 @@ exports.login = async (req, res) => {
             return
         }
 
-        res.render('login-user', { errors: { password: { message: 'password does not match' } } })
+        res.render('loginUser', { errors: { password: { message: 'password does not match' } } })
 
 
     } catch (e) {
@@ -36,7 +36,7 @@ exports.create = async (req, res) => {
     } catch (e) {
         if (e.errors) {
             console.log(e.errors);
-            res.render('create-user', { errors: e.errors })
+            res.render('creatignUser', { errors: e.errors })
             return;
         }
         return res.status(400).send({

@@ -14,7 +14,9 @@ const User = require("./models/User");
 const tasterController = require("./controllers/taster");
 const tastingController = require("./controllers/tasting");
 const homeController = require("./controllers/home");
+
 const userController = require("./controllers/user");
+
 const tastingApiController = require("./controllers/api/tasting");
 const savedTastingApiController = require("./controllers/api/savedTasting");
 const savedTastingController = require("./controllers/savedTasting");
@@ -52,8 +54,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(expressSession({ secret: 'foo barr', cookie: { expires: new Date(253402300000000) } }))
+app.use(expressSession({ secret: 'SecretCookie', cookie: { expires: new Date(253402300000000) } }))
 
+//Add Glboal User & page authorisation
 
 app.use("*", async (req, res, next) => {
   global.user = false;
@@ -114,12 +117,12 @@ app.get("/tastings/delete/:id", tastingController.delete);
 app.get("api/tasting", )
 
 app.get("/join", (req, res) => {
-  res.render('create-user', { errors: {} })
+  res.render('creatingUser', { errors: {} })    //User
 });
 
-app.post("/join", userController.create);
+app.post("/join", userController.create);       // User
 app.get("/login", (req, res) => {
-  res.render('login-user', { errors: {} })
+  res.render('loginUser', { errors: {} })
 });
 app.post("/login", userController.login);
 
