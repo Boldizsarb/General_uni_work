@@ -14,7 +14,7 @@ const userSchema = new Schema(
 userSchema.pre('save', async function (next) {
     console.log(this.password);
     try {
-        const hash = await bcrypt.hash(this.password, 10);
+        const hash = await bcrypt.hash(this.password, 10); // 10 only to make it faster
         this.password = hash;
         next();
     } catch (e) {

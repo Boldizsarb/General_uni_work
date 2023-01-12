@@ -7,14 +7,14 @@ const bodyParser = require("body-parser");
 
 const expressSession = require("express-session");
 const User = require("./models/User");
-
+const userController = require("./controllers/user");
 /**
  * Controllers (route handlers).
  */
 
+const Card = require("./models/Card");
+const CardController = require("./controllers/cards");
 
-
-const userController = require("./controllers/user");
 
 
 const app = express();
@@ -82,6 +82,12 @@ app.get("/logout", async (req, res) => {
   global.user = false;
   res.redirect('/');
 })
+app.get("/mycards", (req, res) => {
+  res.render('forCards', { errors: {} })    
+});
+
+
+app.post("/addcard", CardController.create);
 
 
 
@@ -90,7 +96,7 @@ app.get("/join", (req, res) => {
   res.render('creatingUser', { errors: {} })    //User
 });
 
-app.post("/join", userController.create);       // User
+app.post("/join", userController.create);       // from the controller/users.j
 app.get("/login", (req, res) => {
   res.render('loginUser', { errors: {} })
 });
