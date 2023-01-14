@@ -30,9 +30,6 @@ const { PORT, MONGODB_URI } = process.env;
  * connect to database
  */
 
-
-
-
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 mongoose.connection.on("error", (err) => {
   console.error(err);
@@ -76,6 +73,12 @@ const authMiddleware = async (req, res, next) => {
 app.get("/", (req, res) => {
   res.render('index', { errors: {} })    
 });
+
+app.get("/usersCards", CardController.list);
+app.get("/usersCards/delete/:id", CardController.delete);
+
+
+
 
 app.get("/logout", async (req, res) => {
   req.session.destroy();

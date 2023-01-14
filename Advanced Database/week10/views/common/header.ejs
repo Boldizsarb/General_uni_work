@@ -5,7 +5,8 @@
 		<ul class="slider-menu">
 			<li><a href="/">Home</a></li>
       <% if(user) { %>
-			<li><a href="mycards"> My Cards</a></li>
+			<li><a href="mycards"> Add a Card</a></li>
+			<li><a href="usersCards"> My Cards</a></li>
 			<li><a href="logout"><%= user.email %> Loggout</a></li><% } %>
       <% if(!user) { %>
 			<li><a href="login">Login</a></li>

@@ -9,8 +9,9 @@
 <body>
     <div id="header">
         <%- include('common/header'); -%> <style>#header {height: 10vh;}</style>
-      </div>
+    </div>
       <% if(!user) { %> <h2>Login or Register on the top right ;) </h2> <% } %> 
+      <% if(user){ %> 
     
       <p> user id: <%=user.id%></p>
     <form method="POST" action="/addcard">
@@ -24,7 +25,7 @@
         
         <input type="submit" value="Create">
     </form>
-
+    <% } %>
 
 
 
